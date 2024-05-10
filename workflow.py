@@ -24,7 +24,7 @@ def training_workflow(data_path: str) -> FlyteFile:
     """
 
     data_prep_results = DominoTask(
-        name="Prepare data",
+        name="PrepareData",
         command="python /mnt/code/scripts/prep-data.py",
         environment=DSE,
         hardware_tier="Small",
@@ -37,7 +37,7 @@ def training_workflow(data_path: str) -> FlyteFile:
     )
 
     training_results = DominoTask(
-        name="Train model",
+        name="TrainModel",
         command="python /mnt/code/scripts/train-model.py",
         environment=DSE,
         hardware_tier="Medium",
